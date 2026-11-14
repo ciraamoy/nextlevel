@@ -10,210 +10,89 @@
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- ===== WEEK 1: NAVBAR =====
+       Semua halaman (beranda, login, daftar) ada di SATU file ini.
+       Pindah halaman memakai link #nama, jadi browser tidak memuat ulang
+       dan animasi gelembung serta logo terus berjalan tanpa mengulang. -->
   <header class="navbar">
+
+    <!-- Gelembung hiasan -->
+    <div class="bubbles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Logo NL + nama -->
     <a href="#beranda" class="logo">
       <img src="gambar/logo-nl.gif" alt="Logo NL NextLevel" class="logo-img">
       <span class="logo-text">Next Level</span>
     </a>
 
+    <!-- Menu (di HP dibuka lewat tombol garis tiga, tanpa JavaScript) -->
     <nav class="menu" id="menu">
       <a href="#beranda">Beranda</a>
       <a href="#daftar-ps">Daftar PS</a>
-      <a href="#game">Game</a>
+      <a href="#cek-game">Cek Game</a>
       <a href="#login" class="btn-masuk">Masuk</a>
       <a href="#reservasi" class="btn-reservasi">Reservasi</a>
     </nav>
 
-    <a href="#menu" class="hamburger" aria-label="Buka menu">&#9776;</a>
+    <a href="#menu" class="hamburger" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </a>
     <a href="#beranda" class="tutup" aria-label="Tutup menu">&#10005;</a>
+
   </header>
 
-  <!-- ===== BERANDA ===== -->
+  <!-- ===== BERANDA (isi sementara, diganti di Week 2) ===== -->
   <main id="beranda">
-
-    <section class="hero">
-      <h1>Naik level, main sampai lupa pulang</h1>
-      <p>Pilih PS dan game favoritmu, lalu reservasi lewat WhatsApp.</p>
-      <a href="#reservasi" class="btn-lime">Reservasi sekarang</a>
-    </section>
-
-    <section class="bagian" id="daftar-ps">
-      <h2>Daftar PS</h2>
-      <div class="kotak-2">
-        <div class="kotak">
-          <span class="label ps5">PS5</span>
-          <h3>PlayStation 5</h3>
-          <p class="harga">Rp12.000 <small>/ jam</small></p>
-          <p>6 game tersedia</p>
-        </div>
-        <div class="kotak">
-          <span class="label ps4">PS4</span>
-          <h3>PlayStation 4</h3>
-          <p class="harga">Rp8.000 <small>/ jam</small></p>
-          <p>4 game tersedia</p>
-        </div>
-      </div>
-      <p class="jam">Jam buka: <b>10.00 - 23.00</b> setiap hari. Lama main 1 sampai 4 jam.</p>
-    </section>
-
-    <section class="bagian" id="game">
-      <h2>Game</h2>
-      <div class="kotak-2">
-        <div class="kotak">
-          <span class="label ps5">PS5</span>
-          <ul>
-            <li>EA Sports FC 26</li>
-            <li>Mortal Kombat 1</li>
-            <li>Spider-Man 2</li>
-            <li>God of War Ragnarök</li>
-            <li>Gran Turismo 7</li>
-            <li>Tekken 8</li>
-          </ul>
-        </div>
-        <div class="kotak">
-          <span class="label ps4">PS4</span>
-          <ul>
-            <li>Naruto Storm 4</li>
-            <li>Crash Team Racing</li>
-            <li>It Takes Two</li>
-            <li>GTA V</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reservasi: isian tidak disimpan, langsung dikirim ke link WhatsApp.
-         Ganti nomor di script bagian bawah (NOMOR_WA). -->
-    <section class="bagian" id="reservasi">
-      <h2>Reservasi</h2>
-      <div class="kotak">
-        <form id="form-reservasi">
-          <label for="r-nama">Nama</label>
-          <input type="text" id="r-nama" required>
-
-          <label for="r-telp">No. telepon</label>
-          <input type="tel" id="r-telp" required>
-
-          <label for="r-email">Email</label>
-          <input type="email" id="r-email" required>
-
-          <label for="r-game">Game</label>
-          <select id="r-game">
-            <optgroup label="PS5 - Rp12.000 / jam">
-              <option value="PS5|EA Sports FC 26">EA Sports FC 26</option>
-              <option value="PS5|Mortal Kombat 1">Mortal Kombat 1</option>
-              <option value="PS5|Spider-Man 2">Spider-Man 2</option>
-              <option value="PS5|God of War Ragnarök">God of War Ragnarök</option>
-              <option value="PS5|Gran Turismo 7">Gran Turismo 7</option>
-              <option value="PS5|Tekken 8">Tekken 8</option>
-            </optgroup>
-            <optgroup label="PS4 - Rp8.000 / jam">
-              <option value="PS4|Naruto Storm 4">Naruto Storm 4</option>
-              <option value="PS4|Crash Team Racing">Crash Team Racing</option>
-              <option value="PS4|It Takes Two">It Takes Two</option>
-              <option value="PS4|GTA V">GTA V</option>
-            </optgroup>
-          </select>
-
-          <label for="r-tgl">Tanggal</label>
-          <input type="date" id="r-tgl" required>
-
-          <label for="r-jam">Jam mulai</label>
-          <select id="r-jam">
-            <option value="10.00">10.00</option>
-            <option value="11.00">11.00</option>
-            <option value="12.00">12.00</option>
-            <option value="13.00">13.00</option>
-            <option value="14.00">14.00</option>
-            <option value="15.00">15.00</option>
-            <option value="16.00">16.00</option>
-            <option value="17.00">17.00</option>
-            <option value="18.00">18.00</option>
-            <option value="19.00">19.00</option>
-            <option value="20.00">20.00</option>
-            <option value="21.00">21.00</option>
-            <option value="22.00">22.00</option>
-          </select>
-
-          <label for="r-lama">Lama main</label>
-          <select id="r-lama">
-            <option value="1">1 jam</option>
-            <option value="2">2 jam</option>
-            <option value="3">3 jam</option>
-            <option value="4">4 jam</option>
-          </select>
-
-          <button type="submit" class="btn-lime">Kirim lewat WhatsApp</button>
-        </form>
-        <p class="kecil" id="r-info">Data tidak disimpan. Reservasi sah setelah pesanmu dibalas.</p>
-      </div>
-    </section>
-
-    <footer class="footer">Next Level Rental PS &middot; Buka 10.00 - 23.00</footer>
+    <p>Konten menyusul di Week 2</p>
   </main>
 
-  <!-- ===== HALAMAN MASUK (tanpa database, hanya formalitas) ===== -->
+  <!-- ===== HALAMAN LOGIN =====
+       Tombol Masuk berupa link ke #beranda. Link ini baru bisa diklik
+       kalau akun dan password sudah terisi benar (diatur di CSS dengan :invalid).
+       Formalitas saja, tanpa database. -->
   <section class="auth" id="login">
     <div class="auth-card">
       <img src="gambar/logo-nl-card.gif" alt="" class="auth-logo">
       <h1>Masuk</h1>
+
       <form>
         <label for="login-akun">Akun</label>
         <input type="text" id="login-akun" placeholder="Masukkan nama akun" autocomplete="username" required>
+
         <label for="login-password">Password</label>
         <input type="password" id="login-password" placeholder="Minimal 6 karakter" minlength="6" autocomplete="current-password" required>
-        <p class="kecil">Isi akun dan password (minimal 6 karakter) dulu ya.</p>
+
+        <p class="auth-hint">Isi akun dan password (minimal 6 karakter) dulu ya.</p>
         <a href="#beranda" class="btn-lime">Masuk</a>
       </form>
+
       <p class="auth-switch">Belum punya akun? <a href="#daftar">Daftar</a></p>
     </div>
   </section>
 
-  <!-- ===== HALAMAN DAFTAR ===== -->
+  <!-- ===== HALAMAN DAFTAR =====
+       Setelah Daftar, pengguna diarahkan ke halaman login. -->
   <section class="auth" id="daftar">
     <div class="auth-card">
       <img src="gambar/logo-nl-card.gif" alt="" class="auth-logo">
       <h1>Daftar</h1>
+
       <form>
         <label for="daftar-akun">Akun</label>
         <input type="text" id="daftar-akun" placeholder="Buat nama akun" autocomplete="username" required>
+
         <label for="daftar-password">Password</label>
         <input type="password" id="daftar-password" placeholder="Minimal 6 karakter" minlength="6" autocomplete="new-password" required>
-        <p class="kecil">Isi akun dan password (minimal 6 karakter) dulu ya.</p>
+
+        <p class="auth-hint">Isi akun dan password (minimal 6 karakter) dulu ya.</p>
         <a href="#login" class="btn-lime">Daftar</a>
       </form>
+
       <p class="auth-switch">Sudah punya akun? <a href="#login">Masuk</a></p>
     </div>
   </section>
-
-  <script>
-    // Tanpa database: isian hanya dipakai untuk menyusun pesan WhatsApp.
-    var NOMOR_WA = "6281234567890"; // ganti dengan nomor pengelola (format 62...)
-    var HARGA = { PS5: 12000, PS4: 8000 };
-
-    document.getElementById("form-reservasi").onsubmit = function (e) {
-      e.preventDefault();
-      var v = function (id) { return document.getElementById(id).value; };
-      var game = v("r-game").split("|");
-      var lama = Number(v("r-lama"));
-      var mulai = Number(v("r-jam").slice(0, 2));
-      if (mulai + lama > 23) {
-        document.getElementById("r-info").textContent = "Jam tutup 23.00. Pilih jam mulai lebih awal atau lama main lebih singkat.";
-        return;
-      }
-      var total = (HARGA[game[0]] * lama).toLocaleString("id-ID");
-      var pesan = "Halo Next Level, saya mau reservasi:\n\n" +
-        "Nama: " + v("r-nama") + "\n" +
-        "No. telepon: " + v("r-telp") + "\n" +
-        "Email: " + v("r-email") + "\n" +
-        "Game: " + game[1] + " (" + game[0] + ")\n" +
-        "Tanggal: " + v("r-tgl") + "\n" +
-        "Jam: " + v("r-jam") + " - " + String(mulai + lama).padStart(2, "0") + ".00 (" + lama + " jam)\n" +
-        "Total: Rp" + total + "\n\nMohon konfirmasinya, terima kasih!";
-      window.open("https://wa.me/" + NOMOR_WA + "?text=" + encodeURIComponent(pesan), "_blank");
-    };
-  </script>
 
 </body>
 </html>
