@@ -1,10 +1,12 @@
+
 :root {
   --navy-atas: #1b1f8d;
   --navy-tengah: #0b0c4b;
   --navy-bawah: #08082d;
   --indigo: #3035c6;
   --ungu: #c79dff;
-  --lime: #c9ff45;
+  --aqua: #5ee7ff;
+  --gradasi: linear-gradient(135deg, var(--ungu), var(--aqua)); /* gradasi ungu ke aqua, dipakai di semua tombol */
   --teks: #eceaff;
   --teks-redup: #8f8ced;
 }
@@ -16,8 +18,7 @@
 }
 
 body {
-  background: linear-gradient(180deg, var(--navy-atas), var(--navy-tengah) 55%, var(--navy-bawah));
-  background-attachment: fixed;
+  background: #0a0650; 
   color: var(--teks);
   font-family: 'Fredoka', 'Trebuchet MS', sans-serif;
   line-height: 1.6;
@@ -27,115 +28,8 @@ a {
   text-decoration: none;
 }
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 10%;
-  background: rgba(27, 31, 141, 0.92);
-  border-bottom: 2px solid rgba(199, 157, 255, 0.3);
-}
-
-.logo {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--teks);
-  font-size: 26px;
-  font-weight: 600;
-}
-
-.logo-img {
-  width: 48px;
-  height: 48px;
-  display: block;
-}
-
-.bubbles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.bubbles span {
-  position: absolute;
-  bottom: -20px;
-  border-radius: 50%;
-  background: rgba(199, 157, 255, 0.15);
-  border: 1px solid rgba(199, 157, 255, 0.6);
-  opacity: 0;
-  animation: naik 7s ease-in infinite;
-}
-
-.bubbles span:nth-child(1) { left: 22%; width: 10px; height: 10px; animation-duration: 6s; }
-.bubbles span:nth-child(2) { left: 40%; width: 16px; height: 16px; animation-duration: 8s; animation-delay: 2s; }
-.bubbles span:nth-child(3) { left: 58%; width: 8px;  height: 8px;  animation-duration: 5s; animation-delay: 1s; }
-.bubbles span:nth-child(4) { left: 74%; width: 14px; height: 14px; animation-duration: 7s; animation-delay: 3s; border-color: rgba(201, 255, 69, 0.6); }
-.bubbles span:nth-child(5) { left: 92%; width: 9px;  height: 9px;  animation-duration: 6s; animation-delay: 4s; }
-
-@keyframes naik {
-  0%   { transform: translateY(0); opacity: 0; }
-  20%  { opacity: 1; }
-  100% { transform: translateY(-80px); opacity: 0; }
-}
-
-.menu {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.menu a {
-  padding: 8px 16px;
-  border-radius: 999px;
-  color: var(--teks-redup);
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.2s, background 0.2s;
-}
-
-.menu a:hover {
-  color: var(--lime);
-}
-
-.menu .btn-reservasi {
-  margin-left: 6px;
-  padding: 9px 22px;
-  background: var(--lime);
-  color: #08082d;
-  font-weight: 600;
-  transition: transform 0.15s;
-}
-
-.menu .btn-reservasi:hover {
-  color: #08082d;
-  transform: translateY(-2px);
-}
-
-.hamburger,
-.tutup {
-  display: none;
-}
-
-.menu .btn-masuk {
-  border: 2px solid var(--ungu);
-  color: var(--ungu);
-  padding: 6px 18px;
-}
-
-.menu .btn-masuk:hover,
-body:has(#login:target) .menu .btn-masuk,
-body:has(#daftar:target) .menu .btn-masuk {
-  background: var(--indigo);
-  color: var(--teks);
+html {
+  scroll-behavior: smooth;
 }
 
 .auth {
@@ -146,7 +40,6 @@ body:has(#daftar:target) .menu .btn-masuk {
   padding: 90px 5% 40px;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: linear-gradient(180deg, var(--navy-atas), var(--navy-tengah) 55%, var(--navy-bawah));
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -157,6 +50,29 @@ body:has(#daftar:target) .menu .btn-masuk {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+}
+
+body:not(:has(:target)) #login {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body:not(:has(:target)) #beranda,
+body:has(#login:target) #beranda {
+  visibility: hidden;
+}
+
+body:not(:has(:target)) .menu,
+body:not(:has(:target)) .hamburger,
+body:has(#login:target) .menu,
+body:has(#login:target) .hamburger {
+  visibility: hidden;
+}
+
+body:not(:has(:target)) .logo,
+body:has(#login:target) .logo {
+  pointer-events: none;
 }
 
 .auth-card {
@@ -211,7 +127,7 @@ body:has(#daftar:target) .menu .btn-masuk {
 
 .auth-card input:focus {
   outline: none;
-  border-color: var(--lime);
+  border-color: var(--aqua);
 }
 
 .btn-lime {
@@ -220,7 +136,7 @@ body:has(#daftar:target) .menu .btn-masuk {
   margin-top: 24px;
   text-align: center;
   padding: 14px;
-  background: var(--lime);
+  background: var(--gradasi);
   border: none;
   border-radius: 999px;
   color: #08082d;
@@ -235,7 +151,7 @@ body:has(#daftar:target) .menu .btn-masuk {
   transform: translateY(-2px);
 }
 
-/* Selama akun dan password belum terisi benar, tombol belum bisa diklik */
+/* Kalau akun dan password belum diisi bener, tombol Masuk belum bisa diklik */
 .auth form:invalid .btn-lime {
   opacity: 0.4;
   pointer-events: none;
@@ -256,26 +172,604 @@ body:has(#daftar:target) .menu .btn-masuk {
   display: block;
 }
 
-.auth-switch {
-  margin-top: 20px;
-  font-size: 16px;
-  color: var(--teks-redup);
+.laut {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(180deg, #0a0650, #07043c);
 }
 
-.auth-switch a {
-  color: var(--lime);
+.laut img {
+  position: absolute;
+  max-width: none;
+  will-change: transform;
+  user-select: none;
+}
+
+.lingkaran {
+  left: 50%;
+  top: 52%;
+  width: min(72vh, 90vw);
+  translate: -50% -50%;
+  opacity: 0.4;
+  animation: bernapas 18s ease-in-out infinite alternate;
+}
+
+@keyframes bernapas {
+  from { transform: scale(1) rotate(-3deg); }
+  to   { transform: scale(1.06) rotate(3deg); }
+}
+
+.ikan {
+  left: 0;
+  top: var(--t);
+  width: clamp(44px, var(--w), 190px);
+  opacity: 0.45;
+  animation: renang var(--d) linear infinite var(--z), hanyut var(--b) ease-in-out infinite alternate;
+}
+
+.ikan.balik {
+  scale: -1 1;
+  animation-name: renang-balik, hanyut;
+}
+
+@keyframes renang {
+  from { translate: -45vw 0; }
+  to   { translate: 105vw 0; }
+}
+
+@keyframes renang-balik {
+  from { translate: 105vw 0; }
+  to   { translate: -45vw 0; }
+}
+
+@keyframes hanyut {
+  from { transform: translateY(-14px); }
+  to   { transform: translateY(14px); }
+}
+
+.kuda {
+  opacity: 0.55;
+  animation: melayang-latar 13s ease-in-out infinite;
+}
+
+.kuda1 {
+  right: 3%;
+  bottom: 6%;
+  height: min(40vh, 320px);
+}
+
+.kuda2 {
+  left: 3%;
+  top: 18%;
+  height: min(26vh, 210px);
+  animation-duration: 17s;
+  animation-delay: -6s;
+}
+
+@keyframes melayang-latar {
+  0%   { transform: translate(0, 0) rotate(-4deg); }
+  25%  { transform: translate(18px, -38px) rotate(3deg); }
+  50%  { transform: translate(-6px, -70px) rotate(6deg); }
+  75%  { transform: translate(-20px, -32px) rotate(-2deg); }
+  100% { transform: translate(0, 0) rotate(-4deg); }
+}
+
+@media (max-width: 800px) {
+  .kuda1 {
+    height: 24vh;
+    bottom: 3%;
+  }
+
+  .kuda2 {
+    top: auto;
+    bottom: 6%;
+    height: 16vh;
+  }
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10%;
+  background: #0a0650; 
+  border-bottom: 2px solid rgba(199, 157, 255, 0.3);
+}
+
+.logo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--teks);
+  font-size: 26px;
   font-weight: 600;
 }
 
-.auth-switch a:hover {
-  text-decoration: underline;
+.logo-img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.bubbles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 50%;
+  background: rgba(199, 157, 255, 0.15);
+  border: 1px solid rgba(199, 157, 255, 0.6);
+  opacity: 0;
+  animation: naik 7s ease-in infinite;
+}
+
+.bubbles span:nth-child(1) { left: 22%; width: 10px; height: 10px; animation-duration: 6s; }
+.bubbles span:nth-child(2) { left: 40%; width: 16px; height: 16px; animation-duration: 8s; animation-delay: 2s; }
+.bubbles span:nth-child(3) { left: 58%; width: 8px;  height: 8px;  animation-duration: 5s; animation-delay: 1s; }
+.bubbles span:nth-child(4) { left: 74%; width: 14px; height: 14px; animation-duration: 7s; animation-delay: 3s; border-color: rgba(94, 231, 255, 0.6); }
+.bubbles span:nth-child(5) { left: 92%; width: 9px;  height: 9px;  animation-duration: 6s; animation-delay: 4s; }
+
+@keyframes naik {
+  0%   { transform: translateY(0); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateY(-80px); opacity: 0; }
+}
+
+
+.menu {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu a {
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: var(--teks-redup);
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+}
+
+.menu a:hover {
+  color: var(--aqua);
+}
+
+.menu .btn-reservasi {
+  margin-left: 6px;
+  padding: 9px 22px;
+  background: var(--gradasi);
+  color: #08082d;
+  font-weight: 600;
+  transition: transform 0.15s;
+}
+
+.menu .btn-reservasi:hover {
+  color: #08082d;
+  transform: translateY(-2px);
+}
+
+.hamburger,
+.tutup {
+  display: none;
 }
 
 main {
-  min-height: 150vh;
-  padding: 60px 10%;
+  padding: 0 10%;
   font-size: 18px;
+}
+
+.hero {
+  min-height: calc(100vh - 74px);
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0 70px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 4.6vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #f4f0e4;
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+  text-wrap: balance;
+}
+
+.hero p {
+  max-width: 30em;
+  margin: 22px 0 32px;
+  font-size: clamp(17px, 1.8vw, 22px);
+  color: var(--teks);
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 18px 36px;
+  background: var(--gradasi);
+  border-radius: 999px;
+  color: #08082d;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0 6px 22px rgba(130, 190, 255, 0.4);
+  transition: transform 0.15s;
+}
+
+.btn-hero:hover {
+  transform: translateY(-3px);
+}
+
+.maskot {
+  justify-self: center;
+  width: auto;
+  height: min(455px, 45.5vw); 
+  transform-origin: 50% 70%;
+  animation: melayang 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes melayang {
+  0%, 100% { transform: translateY(0) rotate(-2.5deg); }
+  50%      { transform: translateY(-16px) rotate(2.5deg); }
+}
+
+@media (max-width: 800px) {
+  main {
+    padding: 0 5%;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 0 70px;
+  }
+
+  .maskot {
+    height: min(360px, 86vw);
+  }
+}
+
+.booking {
+  padding-bottom: 60px;
+}
+
+main [id] {
+  scroll-margin-top: 90px;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sr:focus-visible + label {
+  outline: 3px solid var(--aqua);
+  outline-offset: 3px;
+}
+
+.kartu {
+  margin-bottom: 26px;
+  padding: 28px 32px 30px;
+  background: rgba(8, 8, 45, 0.82); 
+  border: 3px solid rgba(123, 114, 224, 0.75);
+  border-radius: 30px;
+}
+
+.kartu h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #f4f0e4;
+}
+
+.nomor {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #5b55c8;
+  font-size: 19px;
+  color: var(--teks);
+}
+
+.pil {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(8, 8, 45, 0.6);
+  border: 2px solid #7b72e0;
+  border-radius: 999px;
+  color: var(--teks);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sr:checked + .pil {
+  background: var(--gradasi);
+  border-color: var(--aqua);
+  color: #08082d;
+  font-weight: 600;
+}
+
+.daftar-ps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.isi-ruang {
+  flex-basis: 100%;
+  margin-top: 10px;
+}
+
+.ruang {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#r1:checked ~ .isi-ruang .r1,
+#r2:checked ~ .isi-ruang .r2,
+#r3:checked ~ .isi-ruang .r3 {
+  display: grid;
+}
+
+.panel {
+  padding: 18px 22px;
+  background: rgba(8, 8, 45, 0.8);
+  border: 2px solid #4a45d0;
+  border-radius: 20px;
+}
+
+.panel h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 8px;
+}
+
+.panel small {
+  font-size: 15px;
+  font-weight: 400;
   color: var(--teks-redup);
+}
+
+.panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.panel li {
+  padding: 9px 0;
+  border-top: 1px solid rgba(123, 114, 224, 0.3);
+  font-size: 18px;
+  color: #f4f0e4;
+}
+
+.lencana {
+  display: inline-block;
+  padding: 1px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #d9d6f0;
+  color: #08082d;
+}
+
+.ps5 .lencana {
+  background: #f4868f;
+}
+
+.etiket {
+  display: block;
+  margin: 20px 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--teks);
+}
+
+.daftar-jam {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.catatan {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--teks-redup);
+}
+
+/* Tombol WhatsApp */
+.btn-wa {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 28px;
+  background: var(--gradasi);
+  border-radius: 999px;
+  color: #08082d;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.kirim span,
+.kirim .btn-wa {
+  display: none;
+}
+
+.booking:has(#j7:checked) .kirim-j7,
+.booking:has(#j8:checked) .kirim-j8,
+.booking:has(#j9:checked) .kirim-j9,
+.booking:has(#j10:checked) .kirim-j10,
+.booking:has(#j11:checked) .kirim-j11,
+.booking:has(#j12:checked) .kirim-j12,
+.booking:has(#j13:checked) .kirim-j13,
+.booking:has(#j14:checked) .kirim-j14,
+.booking:has(#j15:checked) .kirim-j15,
+.booking:has(#j16:checked) .kirim-j16,
+.booking:has(#j17:checked) .kirim-j17,
+.booking:has(#j18:checked) .kirim-j18,
+.booking:has(#j19:checked) .kirim-j19,
+.booking:has(#j20:checked) .kirim-j20,
+.booking:has(#j21:checked) .kirim-j21,
+.booking:has(#j22:checked) .kirim-j22 {
+  display: block;
+}
+
+.booking:has(#m00:checked) .kirim .m00,
+.booking:has(#m10:checked) .kirim .m10,
+.booking:has(#m20:checked) .kirim .m20,
+.booking:has(#m30:checked) .kirim .m30,
+.booking:has(#m40:checked) .kirim .m40,
+.booking:has(#m50:checked) .kirim .m50 {
+  display: inline-block;
+}
+
+.booking:has(.jam-radio:checked):has(.menit-radio:checked) .petunjuk {
+  display: none;
+}
+
+.petunjuk {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--teks-redup);
+}
+
+.lokasi-isi {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.peta {
+  position: relative;
+  aspect-ratio: 1.5;
+  border: 3px solid #7b72e0;
+  border-radius: 22px;
+  background:
+    linear-gradient(#2a74ea, #2a74ea) 33% 0 / 12px 100% no-repeat,
+    linear-gradient(#2a74ea, #2a74ea) 66% 0 / 12px 100% no-repeat,
+    linear-gradient(#2a74ea, #2a74ea) 0 58% / 100% 12px no-repeat,
+    #0b2a9a;
+}
+
+.pin {
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  width: 46px;
+  height: 46px;
+  margin-left: -23px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--aqua);
+  transform: rotate(-45deg);
+}
+
+.pin::after {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border-radius: 50%;
+  background: #08082d;
+}
+
+.lokasi-teks p {
+  margin-bottom: 16px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--teks);
+}
+
+.jam-buka {
+  color: var(--aqua);
+}
+
+.tombol-lokasi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-garis {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid var(--teks);
+  border-radius: 999px;
+  color: var(--teks);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.btn-wa-kecil {
+  margin-top: 0;
+  padding: 12px 24px;
+  border: 2px solid var(--aqua);
+  font-size: 17px;
+}
+
+.penutup {
+  text-align: center;
+  font-size: 15px;
+  color: var(--teks-redup);
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 12px 4%;
+  }
+
+  .menu a {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .kartu {
+    padding: 22px 18px 24px;
+  }
+
+  .kartu h2 {
+    font-size: 23px;
+  }
+
+  .ruang {
+    grid-template-columns: 1fr;
+  }
+
+  .lokasi-isi {
+    grid-template-columns: 1fr;
+  }
+
+  .kirim .btn-wa {
+    text-align: center;
+  }
 }
 
 @media (max-width: 800px) {
@@ -295,7 +789,7 @@ main {
   .tutup {
     position: relative;
     z-index: 1;
-    color: var(--lime);
+    color: var(--aqua);
     font-size: 28px;
     line-height: 1;
   }
@@ -304,7 +798,7 @@ main {
     width: 26px;
     height: 4px;
     border-radius: 4px;
-    background: var(--lime);
+    background: var(--gradasi);
   }
 
   .menu {
@@ -317,16 +811,12 @@ main {
     align-items: flex-start;
     gap: 6px;
     padding: 16px 5% 20px;
-    background: var(--navy-tengah);
+    background: #0a0650;
     border-bottom: 2px solid rgba(199, 157, 255, 0.3);
   }
 
   .menu .btn-reservasi {
     margin: 6px 0 0;
-  }
-
-  .menu .btn-masuk {
-    margin-top: 6px;
   }
 
   .menu:target {
@@ -343,7 +833,13 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bubbles span {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .bubbles span,
+  .maskot,
+  .laut img {
     animation: none;
   }
 }
