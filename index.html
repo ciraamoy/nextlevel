@@ -10,24 +10,17 @@
 </head>
 <body>
 
-  <!-- ===== WEEK 1: NAVBAR =====
-       Semua halaman (beranda, login, daftar) ada di SATU file ini.
-       Pindah halaman memakai link #nama, jadi browser tidak memuat ulang
-       dan animasi gelembung serta logo terus berjalan tanpa mengulang. -->
   <header class="navbar">
 
-    <!-- Gelembung hiasan -->
     <div class="bubbles" aria-hidden="true">
       <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- Logo NL + nama -->
     <a href="#beranda" class="logo">
       <img src="gambar/logo-nl.gif" alt="Logo NL NextLevel" class="logo-img">
       <span class="logo-text">Next Level</span>
     </a>
 
-    <!-- Menu (di HP dibuka lewat tombol garis tiga, tanpa JavaScript) -->
     <nav class="menu" id="menu">
       <a href="#beranda">Beranda</a>
       <a href="#daftar-ps">Daftar PS</a>
@@ -43,15 +36,10 @@
 
   </header>
 
-  <!-- ===== BERANDA (isi sementara, diganti di Week 2) ===== -->
   <main id="beranda">
     <p>Konten menyusul di Week 2</p>
   </main>
 
-  <!-- ===== HALAMAN LOGIN =====
-       Tombol Masuk berupa link ke #beranda. Link ini baru bisa diklik
-       kalau akun dan password sudah terisi benar (diatur di CSS dengan :invalid).
-       Formalitas saja, tanpa database. -->
   <section class="auth" id="login">
     <div class="auth-card">
       <img src="gambar/logo-nl-card.gif" alt="" class="auth-logo">
@@ -72,8 +60,6 @@
     </div>
   </section>
 
-  <!-- ===== HALAMAN DAFTAR =====
-       Setelah Daftar, pengguna diarahkan ke halaman login. -->
   <section class="auth" id="daftar">
     <div class="auth-card">
       <img src="gambar/logo-nl-card.gif" alt="" class="auth-logo">
