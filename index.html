@@ -5,40 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NextLevel - Rental PS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="navbar">
-
-    <div class="bubbles" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-
-    <a href="#beranda" class="logo">
-      <img src="gambar/logo-nl.gif" alt="Logo NL NextLevel" class="logo-img">
-      <span class="logo-text">Next Level</span>
-    </a>
-
-    <nav class="menu" id="menu">
-      <a href="#beranda">Beranda</a>
-      <a href="#daftar-ps">Daftar PS</a>
-      <a href="#cek-game">Cek Game</a>
-      <a href="#login" class="btn-masuk">Masuk</a>
-      <a href="#reservasi" class="btn-reservasi">Reservasi</a>
-    </nav>
-
-    <a href="#menu" class="hamburger" aria-label="Buka menu">
-      <span></span><span></span><span></span>
-    </a>
-    <a href="#beranda" class="tutup" aria-label="Tutup menu">&#10005;</a>
-
-  </header>
-
-  <main id="beranda">
-    <p>Konten menyusul di Week 2</p>
-  </main>
 
   <section class="auth" id="login">
     <div class="auth-card">
@@ -56,29 +26,315 @@
         <a href="#beranda" class="btn-lime">Masuk</a>
       </form>
 
-      <p class="auth-switch">Belum punya akun? <a href="#daftar">Daftar</a></p>
     </div>
   </section>
 
-  <section class="auth" id="daftar">
-    <div class="auth-card">
-      <img src="gambar/logo-nl-card.gif" alt="" class="auth-logo">
-      <h1>Daftar</h1>
+  <div class="laut" aria-hidden="true">
+    <img class="lingkaran" src="gambar/latar-lingkaran.png" alt="">
+    <img class="ikan" style="--t:12%; --w:14vw; --d:85s; --z:-10s; --b:6s" src="gambar/latar-ikan.png" alt="">
+    <img class="ikan balik" style="--t:26%; --w:9vw; --d:110s; --z:-70s; --b:7s" src="gambar/latar-ikan.png" alt="">
+    <img class="ikan" style="--t:38%; --w:12vw; --d:95s; --z:-40s; --b:5s" src="gambar/latar-ikan.png" alt="">
+    <img class="ikan balik" style="--t:50%; --w:8vw; --d:130s; --z:-100s; --b:8s" src="gambar/latar-ikan.png" alt="">
+    <img class="ikan" style="--t:62%; --w:15vw; --d:75s; --z:-30s; --b:6s" src="gambar/latar-ikan.png" alt="">
+    <img class="ikan balik" style="--t:72%; --w:10vw; --d:105s; --z:-85s; --b:7s" src="gambar/latar-ikan.png" alt="">
+    <img class="ikan" style="--t:84%; --w:7vw; --d:140s; --z:-50s; --b:5s" src="gambar/latar-ikan.png" alt="">
+    <img class="ikan balik" style="--t:20%; --w:6vw; --d:150s; --z:-120s; --b:9s" src="gambar/latar-ikan.png" alt="">
+    <img class="kuda kuda1" src="gambar/latar-kudalaut.png" alt="">
+    <img class="kuda kuda2" src="gambar/latar-kudalaut.png" alt="">
+  </div>
 
-      <form>
-        <label for="daftar-akun">Akun</label>
-        <input type="text" id="daftar-akun" placeholder="Buat nama akun" autocomplete="username" required>
+  <header class="navbar">
 
-        <label for="daftar-password">Password</label>
-        <input type="password" id="daftar-password" placeholder="Minimal 6 karakter" minlength="6" autocomplete="new-password" required>
-
-        <p class="auth-hint">Isi akun dan password (minimal 6 karakter) dulu ya.</p>
-        <a href="#login" class="btn-lime">Daftar</a>
-      </form>
-
-      <p class="auth-switch">Sudah punya akun? <a href="#login">Masuk</a></p>
+    <div class="bubbles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
     </div>
-  </section>
+
+    <a href="#beranda" class="logo">
+      <img src="gambar/logo-nl.gif" alt="Logo NL NextLevel" class="logo-img">
+      <span class="logo-text">Next Level</span>
+    </a>
+
+    <nav class="menu" id="menu">
+      <a href="#beranda">Beranda</a>
+      <a href="#daftar-ps">Daftar PS</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="#reservasi" class="btn-reservasi">Reservasi</a>
+    </nav>
+
+    <a href="#menu" class="hamburger" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </a>
+    <a href="#beranda" class="tutup" aria-label="Tutup menu">&#10005;</a>
+
+  </header>
+
+  <main id="beranda">
+    <section class="hero">
+
+      <div class="hero-teks">
+        <h1>Next level, playing until forgetting to go home</h1>
+        <p>Cek game, pilih jam, lalu kirim booking lewat WhatsApp. Tinggal datang dan main.</p>
+        <a href="#cek-game" class="btn-hero">Booking sekarang</a>
+      </div>
+
+      <img src="gambar/kuda-laut.png" alt="Kuda laut maskot NextLevel" class="maskot">
+    </section>
+
+    <section class="booking" id="booking">
+
+      <div class="kartu" id="cek-game">
+        <h2><span class="nomor">1</span> Ruangan dan game</h2>
+
+        <div class="daftar-ps" id="daftar-ps">
+          <input type="radio" name="ruang" id="r1" class="sr" checked><label for="r1" class="pil">Ruang 1</label>
+          <input type="radio" name="ruang" id="r2" class="sr"><label for="r2" class="pil">Ruang 2</label>
+          <input type="radio" name="ruang" id="r3" class="sr"><label for="r3" class="pil">Ruang 3</label>
+
+          <div class="isi-ruang">
+            <div class="ruang r1">
+              <div class="panel ps5">
+                <h3><span class="lencana">PS5</span> <small>Rp12.000 / jam</small></h3>
+                <ul>
+                <li>EA Sports FC 26</li>
+                <li>Mortal Kombat 1</li>
+                <li>Spider-Man 2</li>
+                </ul>
+              </div>
+              <div class="panel ps4">
+                <h3><span class="lencana">PS4</span> <small>Rp8.000 / jam</small></h3>
+                <ul>
+                <li>Naruto Storm 4</li>
+                <li>GTA V</li>
+                </ul>
+              </div>
+            </div>
+            <div class="ruang r2">
+              <div class="panel ps5">
+                <h3><span class="lencana">PS5</span> <small>Rp12.000 / jam</small></h3>
+                <ul>
+                <li>God of War Ragnarök</li>
+                <li>Gran Turismo 7</li>
+                </ul>
+              </div>
+              <div class="panel ps4">
+                <h3><span class="lencana">PS4</span> <small>Rp8.000 / jam</small></h3>
+                <ul>
+                <li>Crash Team Racing</li>
+                <li>It Takes Two</li>
+                </ul>
+              </div>
+            </div>
+            <div class="ruang r3">
+              <div class="panel ps5">
+                <h3><span class="lencana">PS5</span> <small>Rp12.000 / jam</small></h3>
+                <ul>
+                <li>Tekken 8</li>
+                <li>EA Sports FC 26</li>
+                </ul>
+              </div>
+              <div class="panel ps4">
+                <h3><span class="lencana">PS4</span> <small>Rp8.000 / jam</small></h3>
+                <ul>
+                <li>GTA V</li>
+                <li>It Takes Two</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu" id="reservasi">
+        <h2><span class="nomor">2</span> Pilih jam</h2>
+
+        <p class="etiket">Jam</p>
+        <div class="daftar-jam">
+          <input type="radio" name="jam" id="j7" class="sr jam-radio"><label for="j7" class="pil">07</label>
+          <input type="radio" name="jam" id="j8" class="sr jam-radio"><label for="j8" class="pil">08</label>
+          <input type="radio" name="jam" id="j9" class="sr jam-radio"><label for="j9" class="pil">09</label>
+          <input type="radio" name="jam" id="j10" class="sr jam-radio"><label for="j10" class="pil">10</label>
+          <input type="radio" name="jam" id="j11" class="sr jam-radio"><label for="j11" class="pil">11</label>
+          <input type="radio" name="jam" id="j12" class="sr jam-radio"><label for="j12" class="pil">12</label>
+          <input type="radio" name="jam" id="j13" class="sr jam-radio"><label for="j13" class="pil">13</label>
+          <input type="radio" name="jam" id="j14" class="sr jam-radio"><label for="j14" class="pil">14</label>
+          <input type="radio" name="jam" id="j15" class="sr jam-radio"><label for="j15" class="pil">15</label>
+          <input type="radio" name="jam" id="j16" class="sr jam-radio"><label for="j16" class="pil">16</label>
+          <input type="radio" name="jam" id="j17" class="sr jam-radio"><label for="j17" class="pil">17</label>
+          <input type="radio" name="jam" id="j18" class="sr jam-radio"><label for="j18" class="pil">18</label>
+          <input type="radio" name="jam" id="j19" class="sr jam-radio"><label for="j19" class="pil">19</label>
+          <input type="radio" name="jam" id="j20" class="sr jam-radio"><label for="j20" class="pil">20</label>
+          <input type="radio" name="jam" id="j21" class="sr jam-radio"><label for="j21" class="pil">21</label>
+          <input type="radio" name="jam" id="j22" class="sr jam-radio"><label for="j22" class="pil">22</label>
+        </div>
+
+        <p class="etiket">Menit</p>
+        <div class="daftar-jam">
+          <input type="radio" name="menit" id="m00" class="sr menit-radio"><label for="m00" class="pil">00</label>
+          <input type="radio" name="menit" id="m10" class="sr menit-radio"><label for="m10" class="pil">10</label>
+          <input type="radio" name="menit" id="m20" class="sr menit-radio"><label for="m20" class="pil">20</label>
+          <input type="radio" name="menit" id="m30" class="sr menit-radio"><label for="m30" class="pil">30</label>
+          <input type="radio" name="menit" id="m40" class="sr menit-radio"><label for="m40" class="pil">40</label>
+          <input type="radio" name="menit" id="m50" class="sr menit-radio"><label for="m50" class="pil">50</label>
+        </div>
+        <p class="catatan">Buka setiap hari 07.00 sampai 23.00. Bebas pilih jam dan menit (kelipatan 10 menit), misalnya 07.20 atau 09.40.</p>
+
+        <div class="kirim">
+          <p class="petunjuk">Pilih jam dan menit dulu, nanti tombol WhatsApp muncul di sini.</p>
+          <span class="kirim-j7">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2007.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2007.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2007.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2007.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2007.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2007.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j8">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2008.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2008.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2008.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2008.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2008.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2008.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j9">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2009.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2009.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2009.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2009.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2009.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2009.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j10">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2010.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2010.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2010.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2010.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2010.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2010.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j11">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2011.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2011.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2011.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2011.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2011.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2011.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j12">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2012.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2012.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2012.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2012.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2012.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2012.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j13">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2013.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2013.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2013.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2013.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2013.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2013.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j14">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2014.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2014.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2014.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2014.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2014.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2014.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j15">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2015.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2015.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2015.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2015.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2015.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2015.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j16">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2016.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2016.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2016.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2016.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2016.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2016.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j17">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2017.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2017.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2017.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2017.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2017.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2017.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j18">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2018.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2018.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2018.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2018.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2018.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2018.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j19">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2019.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2019.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2019.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2019.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2019.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2019.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j20">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2020.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2020.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2020.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2020.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2020.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2020.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j21">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2021.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2021.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2021.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2021.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2021.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2021.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+          <span class="kirim-j22">
+            <a class="btn-wa m00" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2022.00%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m10" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2022.10%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m20" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2022.20%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m30" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2022.30%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m40" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2022.40%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+            <a class="btn-wa m50" target="_blank" rel="noopener" href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20apakah%20jam%2022.50%20masih%20ready%20untuk%20main%3F">Konfirmasi di WhatsApp</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="kartu" id="lokasi">
+        <h2><span class="nomor">3</span> Lokasi dan jam buka</h2>
+
+        <div class="lokasi-isi">
+          <div class="peta" aria-hidden="true"><span class="pin"></span></div>
+
+          <div class="lokasi-teks">
+            <p><b>Next Level Rental PS</b><br>
+               Salatiga, Jawa Tengah<br>
+               (ganti dengan alamat lengkap)</p>
+            <p>Buka setiap hari<br><b class="jam-buka">07.00 &ndash; 23.00</b></p>
+            <div class="tombol-lokasi">
+              <a class="btn-garis" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&amp;query=Next+Level+Rental+PS+Salatiga">Google Maps</a>
+              <a class="btn-wa btn-wa-kecil" target="_blank" rel="noopener"
+                 href="https://wa.me/6281234567890?text=Halo%20Next%20Level%2C%20saya%20mau%20tanya%20soal%20rental%20PS.">Chat WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="penutup">Booking baru sah setelah pesan WhatsApp kamu dibalas.</p>
+    </section>
+  </main>
 
 </body>
 </html>
