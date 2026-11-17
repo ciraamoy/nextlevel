@@ -1,5 +1,3 @@
-/* ===== PENGATURAN DASAR ===== */
-/* Warna diambil dari video referensi */
 :root {
   --navy-atas: #1b1f8d;
   --navy-tengah: #0b0c4b;
@@ -29,7 +27,6 @@ a {
   text-decoration: none;
 }
 
-/* ===== WEEK 1: NAVBAR ===== */
 .navbar {
   position: sticky;
   top: 0;
@@ -42,7 +39,6 @@ a {
   border-bottom: 2px solid rgba(199, 157, 255, 0.3);
 }
 
-/* --- Logo NL --- */
 .logo {
   position: relative;
   z-index: 1;
@@ -54,14 +50,12 @@ a {
   font-weight: 600;
 }
 
-/* Gerakan logo (naik-turun dan miring sedikit) sudah ada di dalam file logo-nl.gif */
 .logo-img {
   width: 48px;
   height: 48px;
   display: block;
 }
 
-/* --- Gelembung --- */
 .bubbles {
   position: absolute;
   inset: 0;
@@ -91,7 +85,6 @@ a {
   100% { transform: translateY(-80px); opacity: 0; }
 }
 
-/* --- Menu --- */
 .menu {
   position: relative;
   z-index: 1;
@@ -113,7 +106,6 @@ a {
   color: var(--lime);
 }
 
-/* Tombol Reservasi: pil lime seperti di referensi */
 .menu .btn-reservasi {
   margin-left: 6px;
   padding: 9px 22px;
@@ -128,13 +120,11 @@ a {
   transform: translateY(-2px);
 }
 
-/* Tombol hamburger dan tutup disembunyikan di layar besar */
 .hamburger,
 .tutup {
   display: none;
 }
 
-/* Tombol Masuk: pil dengan garis ungu */
 .menu .btn-masuk {
   border: 2px solid var(--ungu);
   color: var(--ungu);
@@ -148,9 +138,6 @@ body:has(#daftar:target) .menu .btn-masuk {
   color: var(--teks);
 }
 
-/* ===== WEEK 1: HALAMAN LOGIN DAN DAFTAR ===== */
-/* Login dan daftar adalah lapisan penuh di atas beranda.
-   Disembunyikan biasa, dan muncul saat alamatnya #login atau #daftar (:target). */
 .auth {
   position: fixed;
   inset: 0;
@@ -284,15 +271,13 @@ body:has(#daftar:target) .menu .btn-masuk {
   text-decoration: underline;
 }
 
-/* ===== ISI SEMENTARA ===== */
 main {
-  min-height: 150vh; /* supaya bisa dicoba scroll, navbar tetap menempel di atas */
+  min-height: 150vh;
   padding: 60px 10%;
   font-size: 18px;
   color: var(--teks-redup);
 }
 
-/* ===== TAMPILAN HP ===== */
 @media (max-width: 800px) {
   .navbar {
     padding: 10px 5%;
@@ -307,7 +292,6 @@ main {
     cursor: pointer;
   }
 
-  /* tanda silang untuk menutup menu, hanya muncul saat menu terbuka */
   .tutup {
     position: relative;
     z-index: 1;
@@ -345,8 +329,6 @@ main {
     margin-top: 6px;
   }
 
-  /* kalau alamatnya #menu, menu muncul dan tombol garis tiga berganti silang.
-     Pindah ke halaman mana pun membuat alamatnya berubah, jadi menu menutup sendiri. */
   .menu:target {
     display: flex;
   }
@@ -360,7 +342,6 @@ main {
   }
 }
 
-/* Hormati pengguna yang mematikan animasi di perangkatnya */
 @media (prefers-reduced-motion: reduce) {
   .bubbles span {
     animation: none;
