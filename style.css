@@ -889,6 +889,59 @@ main [id] {
   color: var(--teks-redup);
 }
 
+.footer {
+  padding: 40px 10% 30px;
+  background: var(--navy-bawah);
+  border-top: 1px solid var(--indigo);
+  text-align: center;
+}
+
+.footer-hak {
+  margin-bottom: 28px;
+  font-size: 15px;
+  color: var(--teks-redup);
+}
+
+.footer-tim {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.anggota {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 130px;
+  text-decoration: none;
+}
+
+.anggota img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--ungu);
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.anggota:hover img {
+  transform: scale(1.08);
+  border-color: var(--aqua);
+}
+
+.anggota strong {
+  margin-top: 8px;
+  color: var(--teks);
+}
+
+.anggota span {
+  font-size: 14px;
+  color: var(--teks-redup);
+}
+
 @media (max-width: 1000px) {
   .fitur {
     grid-template-columns: repeat(2, 1fr);
