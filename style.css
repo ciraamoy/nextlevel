@@ -1,3 +1,4 @@
+/* mendeklarasikan warna */
 :root {
   --navy-atas: #1b1f8d;
   --navy-tengah: #0b0c4b;
@@ -37,6 +38,8 @@ html {
 
 /* untuk mengatur letak section login */
 /* Bagian Andin */
+/* kotak layar penuh. 
+fixed dan inset: 0 supaya menutupi layar */
 .auth {
   position: fixed;
   inset: 0;
@@ -51,6 +54,7 @@ html {
   transition: opacity 0.25s;
 }
 
+/* link #login atau #daftar diklik, tanpa JavaScript. */
 .auth:target {
   visibility: visible;
   opacity: 1;
@@ -75,12 +79,14 @@ body:has(#login:target) .hamburger {
   visibility: hidden;
 }
 
+/* logo gabisa diklik buat login */
 body:not(:has(:target)) .logo,
 body:has(#login:target) .logo {
   pointer-events: none;
 }
 
-.auth-card {
+/* didalam kotak */
+.auth-card { 
   width: 100%;
   max-width: 420px;
   margin: auto;
@@ -91,34 +97,34 @@ body:has(#login:target) .logo {
   box-shadow: 0 0 40px rgba(48, 53, 198, 0.5);
   text-align: center;
 }
-
+/* logo di dalam login */
 .auth-logo {
   width: 84px;
   height: 84px;
 }
-
+/* masuk */
 .auth-card h1 {
   font-size: 32px;
   color: var(--teks);
 }
-
+/* subjudul, tidak terlihat */
 .auth-sub {
   margin-bottom: 22px;
   font-size: 16px;
   color: var(--teks-redup);
 }
-
+/* tulisan rata kiri, kecuali text masuk */
 .auth-card form {
   text-align: left;
 }
-
+/* akun dan password */
 .auth-card label {
   display: block;
   margin: 14px 0 6px;
   font-size: 16px;
   color: var(--teks-redup);
 }
-
+/* kolom isian */
 .auth-card input {
   width: 100%;
   padding: 12px 16px;
@@ -129,12 +135,13 @@ body:has(#login:target) .logo {
   font-family: inherit;
   font-size: 17px;
 }
-
+/* warna border berubah saat dipencet */
 .auth-card input:focus {
   outline: none;
   border-color: var(--aqua);
 }
-
+/* button masuk */
+/* kursor jadi tangan */
 .btn-lime {
   display: block;
   width: 100%;
@@ -148,30 +155,30 @@ body:has(#login:target) .logo {
   font-family: inherit;
   font-size: 18px;
   font-weight: 600;
-  cursor: pointer;
+  cursor: pointer; 
   transition: transform 0.15s;
 }
 
 .btn-lime:hover {
   transform: translateY(-2px);
 }
-
+/* selama form belum valid, tombol pudar dan tidak bisa diklik  */
 .auth form:invalid .btn-lime {
   opacity: 0.4;
   pointer-events: none;
 }
-
+/* saat isinya kurang dari 6 karakter jadi warna pink, invalid*/
 .auth-card input:not(:placeholder-shown):invalid {
   border-color: #ff6b9a;
 }
-
+/* jarak lupa password*/
 .auth-hint {
   display: none;
   margin-top: 16px;
   font-size: 14px;
   color: var(--teks-redup);
 }
-
+/* saat invalid, button masuk tidak bisa ditekan */
 .auth form:invalid .auth-hint {
   display: block;
 }
@@ -225,7 +232,7 @@ body:has(#login:target) .logo {
   top: 18%;
   height: min(26vh, 210px);
 }
-
+/* Di HP: kuda laut dikecilkan dan dipindah  */
 @media (max-width: 800px) {
   .kuda1 {
     height: 24vh;
@@ -250,7 +257,7 @@ body:has(#login:target) .logo {
   background: #0a0650;
   border-bottom: 2px solid rgba(199, 157, 255, 0.3);
 }
-
+/* Logo + tulisan next level diatas gelembung */
 .logo {
   position: relative;
   z-index: 1;
@@ -261,13 +268,13 @@ body:has(#login:target) .logo {
   font-size: 26px;
   font-weight: 600;
 }
-
+ /* display:block menghilangkan celah kecil di bawah gambar */
 .logo-img {
   width: 48px;
   height: 48px;
   display: block;
 }
-
+/* gelembung bergerak keatas dan menghilang, tidak menghalangi menu */
 .bubbles {
   position: absolute;
   inset: 0;
@@ -290,13 +297,13 @@ body:has(#login:target) .logo {
 .bubbles span:nth-child(3) { left: 58%; width: 8px;  height: 8px;  animation-duration: 5s; animation-delay: 1s; }
 .bubbles span:nth-child(4) { left: 74%; width: 14px; height: 14px; animation-duration: 7s; animation-delay: 3s; border-color: rgba(94, 231, 255, 0.6); }
 .bubbles span:nth-child(5) { left: 92%; width: 9px;  height: 9px;  animation-duration: 6s; animation-delay: 4s; }
-
+/* transparan-jelas-menghilang */
 @keyframes naik {
   0%   { transform: translateY(0); opacity: 0; }
   20%  { opacity: 1; }
   100% { transform: translateY(-80px); opacity: 0; }
 }
-
+/* menu nav dikanan */
 .menu {
   position: relative;
   z-index: 1;
@@ -304,7 +311,7 @@ body:has(#login:target) .logo {
   align-items: center;
   gap: 10px;
 }
-
+/* tiap link menu */
 .menu a {
   padding: 8px 16px;
   border-radius: 999px;
@@ -313,11 +320,11 @@ body:has(#login:target) .logo {
   font-weight: 500;
   transition: color 0.2s, background 0.2s;
 }
-
+/* berubah aqua saat di hover */
 .menu a:hover {
   color: var(--aqua);
 }
-
+/* button reservasi: dari link jadi tombol*/
 .menu .btn-reservasi {
   margin-left: 6px;
   padding: 9px 22px;
@@ -331,17 +338,17 @@ body:has(#login:target) .logo {
   color: #08082d;
   transform: translateY(-2px);
 }
-
+/* tertutup saat di laptop, muncul di hp */
 .hamburger,
 .tutup {
   display: none;
 }
-
+/* semua konten dibawah navbar */
 main {
   padding: 0 10%;
   font-size: 18px;
 }
-
+/* area utama beranda */
 .hero {
   min-height: calc(100vh - 74px);
   display: grid;
@@ -350,7 +357,7 @@ main {
   gap: 40px;
   padding: 40px 0 70px;
 }
-
+/* judul */
 .hero h1 {
   font-size: clamp(36px, 4.6vw, 64px);
   font-weight: 700;
@@ -359,14 +366,14 @@ main {
   text-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
   text-wrap: balance;
 }
-
+/* deskripsi */
 .hero p {
   max-width: 30em;
   margin: 22px 0 32px;
   font-size: clamp(17px, 1.8vw, 22px);
   color: var(--teks);
 }
-
+/* button booking sekarang */
 .btn-hero {
   display: inline-block;
   padding: 18px 36px;
@@ -382,7 +389,7 @@ main {
 .btn-hero:hover {
   transform: translateY(-3px);
 }
-
+/* kuda laut bergerak dengan smooth */
 .maskot {
   justify-self: center;
   width: auto;
@@ -391,17 +398,17 @@ main {
   animation: melayang 6s ease-in-out infinite;
   will-change: transform;
 }
-
+/* animasi melayang */
 @keyframes melayang {
   0%, 100% { transform: translateY(0) rotate(-2.5deg); }
   50%      { transform: translateY(-16px) rotate(2.5deg); }
 }
-
+/* HP (lebar <= 800px) */
 @media (max-width: 800px) {
   main {
     padding: 0 5%;
   }
-
+/* tata letak beranda */
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
