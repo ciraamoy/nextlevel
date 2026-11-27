@@ -60,18 +60,18 @@ fixed dan inset: 0 supaya menutupi layar */
   opacity: 1;
   pointer-events: auto;
 }
-
+/* tabel login */
 body:not(:has(:target)) #login {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
-
+/* bagian beranda kelihatan */
 body:not(:has(:target)) #beranda,
 body:has(#login:target) #beranda {
   visibility: hidden;
 }
-
+/* menyembunyikan hamburger pada saat login */
 body:not(:has(:target)) .menu,
 body:not(:has(:target)) .hamburger,
 body:has(#login:target) .menu,
@@ -182,7 +182,7 @@ body:has(#login:target) .logo {
 .auth form:invalid .auth-hint {
   display: block;
 }
-
+/* layar bertumpuk */
 .laut {
   position: fixed;
   inset: 0;
@@ -191,13 +191,13 @@ body:has(#login:target) .logo {
   pointer-events: none;
   background: linear-gradient(180deg, #0a0650, #07043c);
 }
-
+/* background laut */
 .laut img {
   position: absolute;
   max-width: none;
   user-select: none;
 }
-
+/* background lingkaran */
 .lingkaran {
   left: 50%;
   top: 52%;
@@ -216,7 +216,7 @@ body:has(#login:target) .logo {
 .ikan.balik {
   scale: -1 1;
 }
-
+/* kuda transparan */
 .kuda {
   opacity: 0.55;
 }
@@ -245,7 +245,7 @@ body:has(#login:target) .logo {
     height: 16vh;
   }
 }
-
+/* selalu muncul dibagian atas */
 .navbar {
   position: sticky;
   top: 0;
