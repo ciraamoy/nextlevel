@@ -10,12 +10,14 @@
   --teks-redup: #ffffff;
 }
 
+/* Agar posisi website pas */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Untuk mengatur font semua di website dan tinggi garis */
 body {
   background: #0a0650;
   color: var(--teks);
@@ -23,14 +25,18 @@ body {
   line-height: 1.6;
 }
 
+/* Agar garis dibawah seperti beranda , tentang di navbar hilang */
 a {
   text-decoration: none;
 }
 
+/* Agar scroll lebih halus */
 html {
   scroll-behavior: smooth;
 }
 
+/* untuk mengatur letak section login */
+/* Bagian Andin */
 .auth {
   position: fixed;
   inset: 0;
