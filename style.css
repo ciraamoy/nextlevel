@@ -421,6 +421,7 @@ main {
   }
 }
 
+/* Agar ada ruang kosong di bawah */
 .booking {
   padding-bottom: 60px;
 }
@@ -429,6 +430,7 @@ main [id] {
   scroll-margin-top: 90px;
 }
 
+/* Agar hide bulatan radio */
 .sr {
   position: absolute;
   width: 1px;
@@ -437,11 +439,13 @@ main [id] {
   pointer-events: none;
 }
 
+/* untuk pakai tab, ada garis aqua */
 .sr:focus-visible + label {
   outline: 3px solid var(--aqua);
   outline-offset: 3px;
 }
 
+/* untuk kotak ungu di pilih jam dan game */
 .kartu {
   margin-bottom: 26px;
   padding: 28px 32px 30px;
@@ -450,6 +454,7 @@ main [id] {
   border-radius: 30px;
 }
 
+/* Untuk judul dan lingkaran pada nomer */
 .kartu h2 {
   display: flex;
   align-items: center;
@@ -460,6 +465,7 @@ main [id] {
   color: #f4f0e4;
 }
 
+/* Untuk bulatan ungu pada angka 1 ,2 ,3 */
 .nomor {
   display: inline-grid;
   place-items: center;
@@ -471,6 +477,7 @@ main [id] {
   color: var(--teks);
 }
 
+/* Untuk pilihan pada jam dan ruang */
 .pil {
   display: inline-block;
   padding: 8px 20px;
@@ -483,6 +490,7 @@ main [id] {
   cursor: pointer;
 }
 
+/* Pilihan yang uhda diklik bkala jadi gradasi */
 .sr:checked + .pil {
   background: var(--gradasi);
   border-color: var(--aqua);
@@ -490,29 +498,36 @@ main [id] {
   font-weight: 600;
 }
 
+
+/* Agar deretan tombol ruang 1.2.3, jejer */
 .daftar-ps {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
+
+/* Agar lebar dan penuh */
 .isi-ruang {
   flex-basis: 100%;
   margin-top: 10px;
 }
 
+/* untuk menampilkan 2 kolom */
 .ruang {
   display: none;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
+/* munculin ruangan yang dipilih: kalau radio #r1 dicentang, tampilkan .r1, dan seterusnya */
 #r1:checked ~ .isi-ruang .r1,
 #r2:checked ~ .isi-ruang .r2,
 #r3:checked ~ .isi-ruang .r3 {
   display: grid;
 }
 
+/* kotak satu konsol (PS5 atau PS4) beserta daftar gamenya */
 .panel {
   padding: 18px 22px;
   background: rgba(8, 8, 45, 1);
@@ -520,6 +535,7 @@ main [id] {
   border-radius: 20px;
 }
 
+/* Judul panel */
 .panel h3 {
   display: flex;
   align-items: center;
@@ -527,18 +543,21 @@ main [id] {
   margin: 0 0 8px;
 }
 
+/* Tulisan Harga */
 .panel small {
   font-size: 15px;
   font-weight: 400;
   color: var(--teks-redup);
 }
 
+/* Untuk daftar gamenya, list stylenya dihilangin */
 .panel ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* tiap game dikasih garis tipis */
 .panel li {
   padding: 9px 0;
   border-top: 1px solid rgba(123, 114, 224, 0.3);
@@ -546,6 +565,7 @@ main [id] {
   color: #f4f0e4;
 }
 
+/* Bulatan lonjong ps5 dan 4 */
 .lencana {
   display: inline-block;
   padding: 1px 12px;
@@ -556,10 +576,12 @@ main [id] {
   color: #08082d;
 }
 
+/* khusus ps 5 */
 .ps5 .lencana {
   background: #f4868f;
 }
 
+/* Tulisan jam dan menit dan jarak */
 .etiket {
   display: block;
   margin: 20px 0 10px;
@@ -568,18 +590,21 @@ main [id] {
   color: var(--teks);
 }
 
+/* Agar pilihan jam menit jejer dan turun otomatis */
 .daftar-jam {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
+/* kalimat kecil soal jam buka di bawah pilihan menit */
 .catatan {
   margin-top: 14px;
   font-size: 14px;
   color: var(--teks-redup);
 }
 
+/* Tulisan tombol konfirmasi whatsaap */
 .btn-wa {
   display: inline-block;
   margin-top: 22px;
@@ -591,11 +616,13 @@ main [id] {
   font-weight: 600;
 }
 
+/* Semua wada jam dan semua tombol whatssapp disembunyiin */
 .kirim span,
 .kirim .btn-wa {
   display: none;
 }
 
+/* kalau jam tertentu dipilih, buka wadah jam itu aja */
 .booking:has(#j7:checked) .kirim-j7,
 .booking:has(#j8:checked) .kirim-j8,
 .booking:has(#j9:checked) .kirim-j9,
@@ -615,6 +642,7 @@ main [id] {
   display: block;
 }
 
+/* kalau menit tertentu dipilih, munculin tombol yang menitnya sama. */
 .booking:has(#m00:checked) .kirim .m00,
 .booking:has(#m10:checked) .kirim .m10,
 .booking:has(#m20:checked) .kirim .m20,
@@ -624,10 +652,12 @@ main [id] {
   display: inline-block;
 }
 
+/* kalau jam dan menit sudah dipilih, tulisan petunjuk disembunyiin */
 .booking:has(.jam-radio:checked):has(.menit-radio:checked) .petunjuk {
   display: none;
 }
 
+/* tulisan Pilih jam dan menit dulu, nanti tombol WhatsApp muncul di sini. */
 .petunjuk {
   margin-top: 10px;
   font-size: 14px;
@@ -822,6 +852,7 @@ main [id] {
   text-align: center;
 }
 
+/* berisi tentang kami setelah beranda, fungsinya background untuk mengubah warna yang didalem oval itu, border buat ngubah warna pinggiran oval itu, color buat ubah warna teks */
 .tentang-label {
   display: inline-block;
   padding: 6px 18px;
@@ -835,6 +866,7 @@ main [id] {
   color: var(--ungu);
 }
 
+/*  judul bagian kenapa memilih, color bisa diganti sesukamu */
 .tentang h2 {
   margin: 18px 0 12px;
   font-size: clamp(30px, 4vw, 48px);
@@ -844,6 +876,7 @@ main [id] {
   text-wrap: balance;
 }
 
+/*  judul bagian next level */
 .tentang h2 span {
   background: var(--gradasi);
   -webkit-background-clip: text;
@@ -851,6 +884,7 @@ main [id] {
   color: transparent;
 }
 
+/* bagian paragraf kenapa memilih next level */
 .tentang-sub {
   max-width: 32em;
   margin: 0 auto 40px;
@@ -858,12 +892,14 @@ main [id] {
   color: var(--teks-redup);
 }
 
+/* bagian 6 label nya itu, bagian repeat bisa kamu ubah jadi 2 atau angka lainnya nanti posisinya bakal berubah */
 .fitur {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
+/* fungsinya background mengganti warna yang didalem label, border bagian pinggir labelnya */
 .fitur-kartu {
   padding: 28px 22px;
   background: rgba(8, 8, 45, 1);
@@ -872,12 +908,14 @@ main [id] {
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
+/* fungsinya buat kalo kursor kearah situ nanti menyala ada warnanya, border buat ganti warnanya */
 .fitur-kartu:hover {
   transform: translateY(-4px);
   border-color: var(--aqua);
   box-shadow: 0 0 28px rgba(94, 231, 255, 0.25);
 }
 
+/* fungsinya background mengubah warna yang didalem label ikon nya itu */
 .fitur-ikon {
   display: grid;
   place-items: center;
@@ -889,6 +927,7 @@ main [id] {
   font-size: 28px;
 }
 
+/* ini bagian judul di setiap label, color bisa kamu ubah warnanya sesukamu */
 .fitur-kartu h3 {
   margin-bottom: 8px;
   font-size: 20px;
@@ -896,6 +935,7 @@ main [id] {
   color: #f4f0e4;
 }
 
+/* bagian paragraf dari nasing masing labe */
 .fitur-kartu p {
   font-size: 16px;
   line-height: 1.5;
