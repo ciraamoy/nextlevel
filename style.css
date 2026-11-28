@@ -622,6 +622,13 @@ main [id] {
   display: none;
 }
 
+/* kalau ruang tertentu dipilih, buka wadah ruang itu aja (Ruang 1 buka kirim-p1, dst) */
+.booking:has(#p1:checked) .kirim-p1,
+.booking:has(#p2:checked) .kirim-p2,
+.booking:has(#p3:checked) .kirim-p3 {
+  display: block;
+}
+
 /* kalau jam tertentu dipilih, buka wadah jam itu aja */
 .booking:has(#j7:checked) .kirim-j7,
 .booking:has(#j8:checked) .kirim-j8,
@@ -652,12 +659,12 @@ main [id] {
   display: inline-block;
 }
 
-/* kalau jam dan menit sudah dipilih, tulisan petunjuk disembunyiin */
-.booking:has(.jam-radio:checked):has(.menit-radio:checked) .petunjuk {
+/* kalau jam, menit, dan ruangan sudah dipilih, tulisan petunjuk disembunyiin */
+.booking:has(.jam-radio:checked):has(.menit-radio:checked):has(.ruang-radio:checked) .petunjuk {
   display: none;
 }
 
-/* tulisan Pilih jam dan menit dulu, nanti tombol WhatsApp muncul di sini. */
+/* tulisan Pilih jam, menit, dan ruangan dulu, nanti tombol WhatsApp muncul di sini. */
 .petunjuk {
   margin-top: 10px;
   font-size: 14px;
