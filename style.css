@@ -520,7 +520,7 @@ main [id] {
   gap: 20px;
 }
 
-/* munculin ruangan yang dipilih: kalau radio #r1 dicentang, tampilkan .r1, dan seterusnya */
+/* munculin ruangan yang dipilih kalau radio #r1 dicentang, tampilkan .r1, dan seterusnya */
 #r1:checked ~ .isi-ruang .r1,
 #r2:checked ~ .isi-ruang .r2,
 #r3:checked ~ .isi-ruang .r3 {
